@@ -1,0 +1,39 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment variables
+.env
+
+# Build and output directories
+dist/
+build/
+out/
+
+# Logs
+logs/
+*.log
+
+# IDE and editor settings
+.vscode/
+.idea/
+.DS_Store
+
+# Temporary files
+*.tmp
+*.swp
+
+# Cache files
+.cache/
+.next/
+
+# Coverage reports
+coverage/
+
+# Generated assets
+public/assets/
+
+# Ignore specific files
+*.bak
+*.zip
