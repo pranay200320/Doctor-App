@@ -96,7 +96,25 @@ const addDoctor = async (req, res) => {
     res.json({ success: false, message: error.message });
     console.log(error);
   }
-
-  //API For admin Login
 };
-export { addDoctor };
+//API For admin Login
+const adminLogin = (req, res) => {
+  try {
+    const { email, password } = req.body;
+    if (
+      email === process.env.ADMIN_EMAIL &&
+      password === process.env.ADMIN_PASSWORD
+    ) {
+      const token = jwt.sign(email + password, process.env.JWT_SECRECT);
+      // with the help of token we will allow to admin to login in the admin panal
+      res.json({ success: true, token });
+    } else {
+      res.json({ success: false, message: "Invalid Credentials"});
+    }
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: error.message });
+  }
+};
+
+export { addDoctor, adminLogin };

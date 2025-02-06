@@ -1,3 +1,9 @@
+// Node.js is single-threaded,
+//  which means it processes tasks one at a time in a single sequence,
+//  rather than running multiple tasks at the exact same time.
+// However, it is also non-blocking and asynchronous,
+// which allows it to handle multiple tasks efficiently.
+
 //  Express is a web framework for Node.js that makes it easy to create APIs and web applications.
 import express from "express";
 // Enables Cross-Origin Resource Sharing (CORS), allowing your API to be accessed from different domains.
@@ -16,6 +22,7 @@ connectDB();
 connectCloudinary();
 
 // middelware
+
 //whith the help of middeleware we can access the request and respons and moify as well
 app.use(express.json());
 app.use(cors());
